@@ -25,11 +25,10 @@ def read_pdf(file):
     print(f'Total Pages:{num_pages}')
     # count = pdfReader.numPages
     # all_page_text = ""
-    for i in range(num_pages):
-        page = pdfReader.pages[i]
-        all_page_text = page.extract_text()
-    return all_page_text
-
+    for num_page in range(len(pdfReader.pages)):
+        page = pdfReader.pages[num_page]
+        text = page.extract_text()
+    return text
 
 
 def main():
